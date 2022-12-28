@@ -33,7 +33,7 @@ void getRoot(int u, int fa) {
 	if (f[u] < f[rt]) rt = u;
 }
 
-void solve(int u) {
+void calc(int u) {
 	ans += calc(u, 0);
 	vis[u] = 1;
 	for (auto v: g[u])
@@ -42,7 +42,7 @@ void solve(int u) {
             rt = 0;
             sum = sz[v.first];
             getRoot(v.first, 0);
-            solve(rt);
+            calc(rt);
 	    }
 }
 
@@ -56,7 +56,7 @@ int main() {
 	}
 	sum = f[0] = n;
 	getRoot(1, 0);
-	solve(rt);
+	calc(rt);
 	int g = __gcd(ans, n * n);
     cout << ans / g << "/" << n * n / g << endl;
 	return 0;
