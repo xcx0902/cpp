@@ -1,4 +1,5 @@
 del /s /q *.exe
+del /s /q *.out
 :: Run this bat file will delete all .exe files
 :: in this directory (include its children directory,
 :: and children's children directory, and so on).
