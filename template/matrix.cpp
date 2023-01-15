@@ -8,7 +8,7 @@ const int mod1 = 10007;
 const int mod2 = 1e9 + 7;
 const int mod3 = 998244353;
 
-int mod;
+int mod = LONG_LONG_MAX;
 
 class Matrix {
 public:
