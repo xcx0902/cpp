@@ -75,3 +75,4 @@ int mul(int a, int b) {
     return a * b;
 }
 ```
+Or, you can delete `mul` function and change `mul(a[i][k], b[k][j])` in Line 69 of the origin `matrix.cpp` to `a[i][k] * b[k][j]`.
