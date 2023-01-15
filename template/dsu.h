@@ -1,31 +1,31 @@
 #include <vector>
 
 class dsu {
-	private:
-		std::vector<unsigned> f, sz;
+    private:
+        std::vector<unsigned> f, sz;
 
-	public:
-		dsu() {}
+    public:
+        dsu() {}
 
-		dsu(unsigned _sz) {
-			f = sz = std::vector<unsigned>(_sz + 1);
-			for (unsigned i = 1; i <= _sz; i++)
-				f[i] = i, sz[i] = 1;
-		}
+        dsu(unsigned _sz) {
+            f = sz = std::vector<unsigned>(_sz + 1);
+            for (unsigned i = 1; i <= _sz; i++)
+                f[i] = i, sz[i] = 1;
+        }
 
-		unsigned find(unsigned x) {
-			if (f[x] == x) return x;
-			return f[x] = find(f[x]);
-		}
+        unsigned find(unsigned x) {
+            if (f[x] == x) return x;
+            return f[x] = find(f[x]);
+        }
 
-		void merge(unsigned x, unsigned y) {
-			unsigned fx = find(x);
-			unsigned fy = find(y);
-			f[fx] = fy;
-			sz[fy] += sz[fx];
-		}
+        void merge(unsigned x, unsigned y) {
+            unsigned fx = find(x);
+            unsigned fy = find(y);
+            f[fx] = fy;
+            sz[fy] += sz[fx];
+        }
 
-		unsigned size(unsigned x) {
-			return sz[find(x)];
-		}
+        unsigned size(unsigned x) {
+            return sz[find(x)];
+        }
 };
