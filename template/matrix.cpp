@@ -14,7 +14,9 @@ class Matrix {
 public:
     int n, m;
     vector<vector<int>> v;
-    vector<int>& operator[](int x) { return v[x]; }
+    vector<int>& operator[](int x) {
+        return v[x];
+    }
     void resize(int r, int c) {
         n = r, m = c;
         v = vector<vector<int>>(n, vector<int>(m));
@@ -23,13 +25,15 @@ public:
         cin >> n >> m;
         resize(n, m);
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++) cin >> v[i][j];
+            for (int j = 0; j < m; j++)
+                cin >> v[i][j];
     }
     void print(bool printnm = false) {
         if (printnm)
             cout << n << " " << m << endl;
         for (int i = 0; i < n; i++, cout << endl)
-            for (int j = 0; j < m; j++) cout << v[i][j] << " ";
+            for (int j = 0; j < m; j++)
+                cout << v[i][j] << " ";
     }
 };
 
@@ -49,7 +53,8 @@ void useMod(int x) { mod = x; }
 Matrix base(int n) {
     Matrix ret;
     ret.resize(n, n);
-    for (int i = 0; i < n; i++) ret[i][i] = 1;
+    for (int i = 0; i < n; i++)
+        ret[i][i] = 1;
     return ret;
 }
 
@@ -60,7 +65,8 @@ Matrix operator*(Matrix a, Matrix b) {
     c.resize(a.n, b.m);
     for (int i = 0; i < a.n; i++)
         for (int j = 0; j < b.m; j++)
-            for (int k = 0; k < a.m; k++) (c[i][j] += mul(a[i][k], b[k][j])) %= mod;
+            for (int k = 0; k < a.m; k++)
+                (c[i][j] += mul(a[i][k], b[k][j])) %= mod;
     return c;
 }
 
