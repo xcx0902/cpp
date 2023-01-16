@@ -1,8 +1,7 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <iostream>
+#include <limits>
 #define int long long
-using namespace std;
-
-/* -----Template Begin----- */
 
 const int mod1 = 10007;
 const int mod2 = 1e9 + 7;
@@ -13,27 +12,27 @@ int mod = LONG_LONG_MAX;
 class Matrix {
 public:
     int n, m;
-    vector<vector<int>> v;
-    vector<int>& operator[](int x) {
+    std::vector<std::vector<int>> v;
+    std::vector<int>& operator[](int x) {
         return v[x];
     }
     void resize(int r, int c) {
         n = r, m = c;
-        v = vector<vector<int>>(n, vector<int>(m));
+        v = std::vector<std::vector<int>>(n, std::vector<int>(m));
     }
     void read() {
-        cin >> n >> m;
+        std::cin >> n >> m;
         resize(n, m);
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
-                cin >> v[i][j];
+                std::cin >> v[i][j];
     }
     void print(bool printnm = false) {
         if (printnm)
-            cout << n << " " << m << endl;
-        for (int i = 0; i < n; i++, cout << endl)
+            std::cout << n << " " << m << std::endl;
+        for (int i = 0; i < n; i++, std::cout << std::endl)
             for (int j = 0; j < m; j++)
-                cout << v[i][j] << " ";
+                std::cout << v[i][j] << " ";
     }
 };
 
@@ -84,4 +83,4 @@ Matrix operator^(Matrix a, int b) {
     return tmp;
 }
 
-/* -----Template Ended----- */
+#undef int
