@@ -11,7 +11,7 @@ Including:
 
 How to use:
 
-Put `matrix.cpp` in your C++ program's head to use its features.
+Include `matrix.h` in to use its features.
 
 1. Set mod
 
@@ -65,7 +65,7 @@ int mul(int a, int b) {
     }
     return ans;
 }
-// L40-49 in matrix.cpp
+// L39-48 in matrix.h
 ```
 
 If you think it makes your program slow, you can change it to:
@@ -75,4 +75,4 @@ int mul(int a, int b) {
     return a * b;
 }
 ```
-Or, you can delete `mul` function and change `mul(a[i][k], b[k][j])` in Line 69 of the origin `matrix.cpp` to `a[i][k] * b[k][j]`.
+Or, you can delete `mul` function and change `mul(a[i][k], b[k][j])` in Line 68 of the origin `matrix.cpp` to `a[i][k] * b[k][j]`.
