@@ -71,7 +71,7 @@ class SegmentTree {
         }
 
         tp query(unsigned l, unsigned r, unsigned p = 1) {
-            if (l <= t[p].l && r >= t[p].r)return t[p].dat;
+            if (l <= t[p].l && r >= t[p].r) return t[p].dat;
             spread(t[p << 1].l, t[p << 1].r, t[p << 1 | 1].l, t[p << 1 | 1].r, t[p].lazy, t[p << 1].dat, t[p << 1 | 1].dat, t[p << 1].lazy, t[p << 1 | 1].lazy);
             tp left = 0, right = 0;
             unsigned mid = t[p].l + t[p].r >> 1;
