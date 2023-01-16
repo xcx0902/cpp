@@ -25,6 +25,10 @@ class dsu {
             sz[fy] += sz[fx];
         }
 
+        bool same(unsigned x, unsigned y) {
+            return find(x) == find(y);
+        }
+
         unsigned size(unsigned x) {
             return sz[find(x)];
         }
