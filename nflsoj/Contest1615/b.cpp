@@ -10,7 +10,7 @@ int qpow(int a, int b, int p) {
     else       return tmp * tmp % p;
 }
 
-class inverseElement {
+class combMaths {
     private :
         unsigned n;
         int p;
@@ -24,9 +24,9 @@ class inverseElement {
                 fac[i] = fac[i - 1] * i % P;
         }
     public :
-        inverseElement() {
+        combMaths() {
         }
-        inverseElement(int P) {
+        combMaths(int P) {
             p = P;
         }
         int C(unsigned N, unsigned M, int P = 0) {
@@ -45,7 +45,7 @@ class inverseElement {
 
 const int p = 1e9 + 7;
 int n, m, ans;
-inverseElement ie(p);
+combMaths ie(p);
 
 signed main() {
     cin >> n >> m;
