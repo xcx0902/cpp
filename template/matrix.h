@@ -1,6 +1,6 @@
 #include <vector>
 #include <iostream>
-#include <limits>
+#include <limits.h>
 #define int long long
 
 const int mod1 = 10007;
