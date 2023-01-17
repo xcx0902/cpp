@@ -132,7 +132,7 @@ int binarySearch(int l, int r, bool (*check)(int), int ans = 0) {
 
 double binarySearch(double l, double r, bool (*check)(double), double eps = 1e-6, double ans = 0) {
     double mid = 0;
-    while(abs(l - r) > eps) {
+    while (abs(l - r) > eps) {
         mid = (l + r) / 2;
         if (check(mid)) l = mid, ans = mid;
         else r = mid;
