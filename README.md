@@ -6,6 +6,10 @@ Copyright 2023
 
 **If you need to quote some codes of this repository, please indicate the source (like "Source: `<URL>`"). Those who do not specify will be severely punished.**
 
+**请不要对本仓库中除 `template` 目录下的任何文件提交 PR 或 Issue。**
+
+**Please don't submit PR or Issue to any file except files under `template` directory.**
+
 ### Advertisement
 
 Useful C++ editor:
