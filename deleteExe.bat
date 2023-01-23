@@ -1,3 +1,5 @@
+:: PS: Only for Windows
+
 del /s /q *.exe
 del /s /q *.out
 : Run this bat file will delete all .exe and .out 
