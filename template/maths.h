@@ -44,11 +44,11 @@ inline void sub(int &x, int y) {
 #define popcount(__x) __builtin_popcount(__x)
 
 #ifdef __MOD
-int qpow(int a, int b, int p = __mod) {
+int qpow(int a, int b, int p = __mod)
 #else
-int qpow(int a, int b, int p) {
+int qpow(int a, int b, int p)
 #endif
-    if (b == 0) return 1 % p;
+{   if (b == 0) return 1 % p;
     if (b == 1) return a % p;
     int tmp = qpow(a, b / 2, p) % p;
     if (b % 2) return tmp * tmp % p * a % p;
