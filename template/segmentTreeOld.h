@@ -1,3 +1,7 @@
+#ifndef _SEGMENT_TREE_H
+#define _SEGMENT_TREE_H
+#warning "This template is out of date, please use the new version segmentTree.h instead"
+
 #include <vector>
 
 template <typename tp>
@@ -22,8 +26,7 @@ void _change(unsigned l, unsigned r, tp& dat, tp& lzy, tp cg) {
     lzy += cg;
 }
 
-template
-<
+template <
     typename tp = long long,
     tp (*op)(tp a, tp b) = _sum,
     void (*spread)(unsigned ll, unsigned lr, unsigned rl, unsigned rr, tp& lzy, tp& ldat, tp& rdat, tp& llzy, tp& rlzy) = _spread,
@@ -80,3 +83,5 @@ class SegmentTree {
             return op(left, right);
         }
 };
+
+#endif // _SEGMENT_TREE_H
