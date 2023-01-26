@@ -10,7 +10,7 @@ First, you need to decide if you want to use module or not. If you need module, 
 #define __MOD
 ```
 
-Now, you can enjoy your coding with our template.
+Now, you can enjoy coding with our template.
 
 What does this template include?
 
