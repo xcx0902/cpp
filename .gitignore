@@ -6,3 +6,4 @@
 *.o
 Makefile.win
 *.res
+*.prob
