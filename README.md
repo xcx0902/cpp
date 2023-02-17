@@ -17,4 +17,4 @@ Useful C++ editor:
 1. [Red Panda Dev-C++](https://github.com/xcx0902/nfls/tree/main/devc++)
 2. [Visual Studio Code (Recommend)](https://github.com/xcx0902/nfls/tree/main/vscode)
 
-My offical blog: <https://xcx0902.github.io>
+My offical blog: <https://xcx0902-blog.github.io>
