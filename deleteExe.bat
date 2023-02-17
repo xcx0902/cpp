@@ -2,7 +2,8 @@
 
 del /s /q *.exe
 del /s /q *.out
-: Run this bat file will delete all .exe and .out 
+del /s /q *.o
+: Run this bat file will delete all compiled 
 : files in this directory (include its children
 : directory, and children's children directory, and
 : so on). You can put it in your C++ working root
