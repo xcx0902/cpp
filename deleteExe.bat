@@ -1,4 +1,5 @@
 :: PS: Only for Windows
+:: Warning: Don't use this file if you need compiled files!
 
 del /s /q *.exe
 del /s /q *.out
