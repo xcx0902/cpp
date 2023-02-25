@@ -1,2 +1,0 @@
-# NFLSOJ
-NFLSOJ Codes
