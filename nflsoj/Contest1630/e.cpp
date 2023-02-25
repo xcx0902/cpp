@@ -49,17 +49,17 @@
 #define int long long
 using namespace std;
 
-const int P = 10000000000000000, N = 205;
+const int P = 10000, N = 205;
 int n, m, a[N][N];
 
 struct Int {
-    int num[105], len;
+    int num[25], len;
     Int() { memset(num, 0, sizeof num), len = 0; }
     void print() {
         printf("%d", num[len]);  
         for (int i = len - 1; i > 0; i--) {  
             if (num[i] == 0) {
-                printf("0000000000000000"); 
+                printf("0000"); 
                 continue;
             }
             for (int k = 10; k * num[i] < P; k *= 10) 
