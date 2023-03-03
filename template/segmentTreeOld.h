@@ -1,6 +1,6 @@
 #ifndef _SEGMENT_TREE_H
 #define _SEGMENT_TREE_H
-#warning "This template is out of date, please use the new version segmentTree.h instead"
+#warning "This template is out of date, please use the new version segmentTree.h instead unless you still want to use this"
 
 #include <vector>
 
