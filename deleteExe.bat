@@ -1,7 +1,7 @@
 :: PS: Only for Windows
 :: Warning: Don't use this file if you need compiled files!
 
-echo off
+@echo off
 del /s /q *.exe >nul 2>nul
 del /s /q *.out >nul 2>nul
 del /s /q *.o >nul 2>nul
