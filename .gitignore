@@ -7,3 +7,5 @@
 Makefile.win
 *.res
 *.prob
+tempCodeRunnerFile.*
+temporary/

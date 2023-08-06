@@ -1,42 +1,72 @@
 #include <bits/stdc++.h>
-//#define dbg cerr << "Line " << __LINE__ << endl
-#define dbg
-#warning
+#define int long long
 using namespace std;
 
-string s;
-stack<pair<char, int>> st;
-char c;
-int l, r, ans;
+const int N = 1000005;
+int n, mx, mn, a[N], lmx[N], rmx[N], lmn[N], rmn[N];
+stack<int> s;
 
-int main() {
-	cin >> s;
-	dbg;
-	for (int i = 0; i < s.size(); i++) {
-		if (s[i] == '(') st.push({s[i], i});
-		else {
-			if (!st.empty() && st.top().first == '(') st.pop();
-			else st.push({s[i], i});
-		}
-	}
-	dbg;
-	if (st.empty()) {
-		cout << 0 << endl;
-		return 0;
-	}
-	c = st.top().first;
-	r = st.top().second;
-	st.pop();
-	l = st.top().second;
-	dbg;
-	if (c == '(') {
-		for (int i = r; i < s.size(); i++)
-			ans += s[i] == c;
-		cout << ans << endl;
-	} else {
-		for (int i = l; i >= 0; i--)
-			ans += s[i] == c;
-		cout << ans << endl;
-	}
-	return 0; 
+void getlmx() {
+    a[0] = 1145141919810LL;
+    s = stack<int>();
+    for (int i = 0; i <= n; i++) {
+        while (!s.empty() && a[s.top()] <= a[i])
+            s.pop();
+        lmx[i] = i - (s.empty()? 0 : s.top());
+        s.push(i);
+    }
+}
+
+void getrmx() {
+    a[n + 1] = 1145141919810LL;
+    s = stack<int>();
+    for (int i = n + 1; i >= 1; i--) {
+        while (!s.empty() && a[s.top()] < a[i])
+            s.pop();
+        rmx[i] = (s.empty()? 0 : s.top()) - i;
+        s.push(i);
+    }
+}
+
+void getlmn() {
+    a[0] = -1145141919810LL;
+    s = stack<int>();
+    for (int i = 0; i <= n; i++) {
+        while (!s.empty() && a[s.top()] >= a[i])
+            s.pop();
+        lmn[i] = i - (s.empty()? 0 : s.top());
+        s.push(i);
+    }
+}
+
+void getrmn() {
+    a[n + 1] = -1145141919810LL;
+    s = stack<int>();
+    for (int i = n + 1; i >= 1; i--) {
+        while (!s.empty() && a[s.top()] > a[i])
+            s.pop();
+        rmn[i] = (s.empty()? 0 : s.top()) - i;
+        s.push(i);
+    }
+}
+
+void dbg(int a[], string msg = "Debugging") {
+    cout << msg << endl;
+    for (int i = 1; i <= n; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+signed main() {
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> a[i];
+    getlmx(), getrmx();
+    getlmn(), getrmn();
+//  dbg(lmx), dbg(rmx);
+//  dbg(lmn), dbg(rmn);
+    for (int i = 1; i <= n; i++)
+        mx += a[i] * lmx[i] * rmx[i], mn += a[i] * lmn[i] * rmn[i];
+    cout << mx - mn << endl;
+    return 0;
 }
